@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
-    name { Faker::Food.dish }
+    name { "Ayam Bakar" }
     price { 15000.0 }
-    description { Faker::Food.description }
+    description { "Ayam bakar is an Indonesian and Malaysian dish, consisting of charcoal-grilled chicken." }
   end
 end
