@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
-    name { "MyString" }
-    price { 1.5 }
-    description { "MyText" }
+    name { Faker::Food.dish }
+    price { 15000.0 }
+    description { Faker::Food.description }
   end
 end

@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CategoryDetail, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'has a valid category details' do
+    expect(FactoryBot.build(:category_detail)).to be_valid
+  end
 end
