@@ -11,7 +11,7 @@ RSpec.describe Category, type: :model do
     expect(category.errors[:name]).to include("can't be blank")
   end
 
-  it 'is invalid with non letter characters' do
+  it 'is invalid with non letters characters' do
     category = FactoryBot.build(:category, name: "D3s53rt")
     category.valid?
     expect(category.errors[:name]).to include("only allows letters")
