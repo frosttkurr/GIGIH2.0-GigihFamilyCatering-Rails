@@ -1,2 +1,13 @@
-<h1>Menus#new</h1>
-<p>Find me in app/views/menus/new.html.erb</p>
+<h1>New Menu</h1>
+
+<%= form_tag("/menus", {method: :post}) do %>
+  <%= render "form", menu: @menu %>
+  <input type="submit" value="Create a Menu">
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to menus", menus_path %>
+</div>
+

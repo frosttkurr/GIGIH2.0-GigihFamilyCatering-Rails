@@ -1,2 +1,21 @@
-<h1>Menus#show</h1>
-<p>Find me in app/views/menus/show.html.erb</p>
+<p style="color: green"><%= notice %></p>
+
+<%= render @menu %>
+
+<p>
+  <strong>Description:</strong>
+  <%= @menu.description %>
+</p>
+<p>
+  <strong>Category:</strong>
+  <% @categories.each do |category| %>
+    <%= category.name %>
+  <% end %>
+</p>
+
+<div>
+  <%= link_to "Edit this menu", edit_menu_path(@menu) %> |
+  <%= link_to "Back to menu", menus_path %>
+
+  <%= button_to "Destroy this menu", @menu, method: :delete %>
+</div>

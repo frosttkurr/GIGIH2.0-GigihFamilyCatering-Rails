@@ -1,0 +1,22 @@
+<div>
+  <p>Name:</p>
+  <input type="text" name="name" value="<%= @menu.name %>">
+</div>
+  
+<div>
+  <p>Price:</p>
+  <input type="number" name="price" value="<%= @menu.price %>">
+</div>
+
+<div>
+  <p>Description:</p>
+  <textarea name="description"><%= @menu.description %></textarea>
+</div>
+
+<div>
+  <p>Category:</p>
+  <% @categories.each do |category| %>
+    <input type="checkbox" name="category_id[]" value="<%= category.id %>"
+    <p>&nbsp<%= category.name %></p>
+  <% end %>
+</div>

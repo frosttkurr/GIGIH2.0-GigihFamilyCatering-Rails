@@ -77,9 +77,9 @@ RSpec.describe "/categories", type: :request do
         }.to change(Category, :count).by(0)
       end
 
-      it "renders back to the 'new' template)" do
-        post categories_url, params: { category: invalid_attributes }
-        expect(response).to be_successful
+      it "renders back to the 'new' template" do
+        post categories_url, params: { category: {name: "2312"} }
+        expect(response).to have_http_status(:unprocessable_entity)
       end
     end
   end
@@ -107,9 +107,9 @@ RSpec.describe "/categories", type: :request do
 
     context "with invalid parameters" do
       it "renders a successful response (i.e. to display the 'edit' template)" do
-        category = Category.create! valid_attributes
-        patch category_url(category), params: { category: invalid_attributes }
-        expect(response).to be_successful
+        category = Category.create(name: "Beverate")
+        patch category_url(category), params: { category: {name: "2312"} }
+        expect(response).to have_http_status(:unprocessable_entity)
       end
     end
   end
