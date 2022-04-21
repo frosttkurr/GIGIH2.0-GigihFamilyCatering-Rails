@@ -1,0 +1,13 @@
+<div class="title">
+  <h1>Login</h1>
+</div>
+
+<div class="login-form">
+  <%= form_tag("/login") do %>
+    <label for="username">Username</label>
+    <input name="username" value="<%= @username %>">
+    <label for="password">Password</label>
+    <input type="password" name="password" value="<%= @password %>">
+    <input type="submit" value="Log in">
+  <% end %>
+</div>
