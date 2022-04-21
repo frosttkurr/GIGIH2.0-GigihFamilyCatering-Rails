@@ -21,10 +21,6 @@ class MenusController < ApplicationController
   def create
     @menu = Menu.new(menu_params)
     @categories = params[:category_id]
-
-    if @categories.nil?
-      redirect_to("/menus/new")
-    end
     
     if !@categories.nil? && @menu.save
       @categories.each do |category|
@@ -36,16 +32,18 @@ class MenusController < ApplicationController
         @category_details.save
       end
       redirect_to menu_url(@menu)
+    else
+      @categories.nil?
+      redirect_to("/menus/new", status: 302)
     end
   end
 
-  def update
-    @categories = params[:category_id]
-    
+  def update    
     if @menu.update(menu_params)
+      flash[:notice] = "Menu was successfully updated."
       redirect_to menu_url(@menu)
     else
-      render :edit, status: 422
+      edit_menu_path(@menu, status: 302)
     end
   end
 

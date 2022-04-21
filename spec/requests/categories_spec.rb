@@ -106,7 +106,7 @@ RSpec.describe "/categories", type: :request do
     end
 
     context "with invalid parameters" do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
+      it "renders back to the 'edit' template)" do
         category = Category.create(name: "Beverate")
         patch category_url(category), params: { category: {name: "2312"} }
         expect(response).to have_http_status(:unprocessable_entity)
