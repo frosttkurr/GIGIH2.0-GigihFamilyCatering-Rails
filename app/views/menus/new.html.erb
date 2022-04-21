@@ -2,6 +2,15 @@
 
 <%= form_tag("/menus", {method: :post}) do %>
   <%= render "form", menu: @menu %>
+    
+  <div>
+    <p>Category:</p>
+    <% @categories.each do |category| %>
+      <input type="checkbox" name="category_id[]" value="<%= category.id %>">
+      <label><%= category.name %></label>
+    <% end %>
+  </div>
+      
   <input type="submit" value="Create a Menu">
 <% end %>
 

@@ -12,11 +12,3 @@
   <p>Description:</p>
   <textarea name="description"><%= @menu.description %></textarea>
 </div>
-
-<div>
-  <p>Category:</p>
-  <% @categories.each do |category| %>
-    <input type="checkbox" name="category_id[]" value="<%= category.id %>"
-    <p>&nbsp<%= category.name %></p>
-  <% end %>
-</div>
