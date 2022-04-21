@@ -5,10 +5,10 @@ RSpec.describe CategoryDetail, type: :model do
     expect(FactoryBot.build(:category_detail)).to be_valid
   end
 
-  it 'is invalid without item id' do
-    category_detail = FactoryBot.build(:category_detail, item_id: nil)
+  it 'is invalid without menu id' do
+    category_detail = FactoryBot.build(:category_detail, menu_id: nil)
     category_detail.valid?
-    expect(category_detail.errors[:item_id]).to include("can't be blank")
+    expect(category_detail.errors[:menu_id]).to include("can't be blank")
   end
   
   it 'is invalid without category id' do
