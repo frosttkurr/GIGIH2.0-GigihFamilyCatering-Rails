@@ -5,10 +5,10 @@ RSpec.describe Order, type: :model do
     expect(FactoryBot.build(:order)).to be_valid
   end
 
-  it 'is invalid without owner id' do
-    order = FactoryBot.build(:order, owner_id: nil)
+  it 'is invalid without user id' do
+    order = FactoryBot.build(:order, user_id: nil)
     order.valid?
-    expect(order.errors[:owner_id]).to include("can't be blank")
+    expect(order.errors[:user_id]).to include("can't be blank")
   end
 
   it 'is invalid without customer email' do
