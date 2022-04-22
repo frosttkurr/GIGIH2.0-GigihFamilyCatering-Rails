@@ -3,12 +3,22 @@
 <h1>Categories</h1>
 
 <div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
-  <% end %>
+  <table style="width: 30%; text-align: left;">
+    <thead>
+      <th>No</th>
+      <th>Name</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @categories.each_with_index do |category, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= category.name %></td>
+          <td><%= link_to "Show this category", category %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 <%= link_to "New category", new_category_path %>

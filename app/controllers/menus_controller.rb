@@ -32,6 +32,7 @@ class MenusController < ApplicationController
         )
         @category_details.save
       end
+      flash[:notice] = "Menu was successfully created."
       redirect_to menu_url(@menu)
     else
       redirect_to("/menus/new", status: 302)
@@ -50,11 +51,12 @@ class MenusController < ApplicationController
   def destroy
     CategoryDetail.destroy_by(menu_id: @menu.id)
     @menu.destroy
+    flash[:notice] = "Menu was successfully destroyed."
     redirect_to menus_url
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Use callbacks to share current category between actions for show/update/delete.
     def set_menu
       @menu = Menu.find(params[:id])
     end

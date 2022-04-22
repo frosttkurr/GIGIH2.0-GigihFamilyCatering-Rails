@@ -3,7 +3,7 @@
 <h1>List of Menu</h1>
 
 <div id="menus">
-  <table style="width: 70%; text-align: center;">
+  <table style="width: 75%; text-align: left;">
     <thead>
       <th>No</th>
       <th>Name</th>
@@ -17,22 +17,12 @@
           <td><%= index + 1 %></td>
           <td><%= menu.name %></td>
           <td><%= menu.price %></td>
-          <td><p><%= menu.description %></p></td>
+          <td><%= menu.description %></td>
           <td><%= link_to "Show this menu", menu %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-
-<!-- <div id="menus">
-  <% @menus.each do |menu| %>
-    <%= render menu %>
-        
-    <p>
-      <%= link_to "Show this menu", menu %>
-    </p>
-  <% end %>
-</div> -->
 
 <%= link_to "New menu", new_menu_path %>

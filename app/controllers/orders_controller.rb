@@ -19,7 +19,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    # @order = Order.new(order_params)
     @email = params[:customer_email]
     @menus = params[:menu_id]
     @quantity = params[:quantity].compact_blank
@@ -45,6 +44,7 @@ class OrdersController < ApplicationController
             sub_total: @menu_price * @quantity[index].to_f
           ).save
         end
+        flash[:notice] = "Order was successfully created."
         redirect_to order_url(@order)
       end
     else
@@ -62,11 +62,12 @@ class OrdersController < ApplicationController
   def destroy
     OrderDetail.destroy_by(order_id: @order.id)
     @order.destroy
+    flash[:notice] = "Order was successfully destroyed."
     redirect_to orders_url
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Use callbacks to share current category between actions for show/update/delete.
     def set_order
       @order = Order.find(params[:id])
     end
