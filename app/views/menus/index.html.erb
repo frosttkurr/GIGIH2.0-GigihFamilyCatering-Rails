@@ -3,6 +3,29 @@
 <h1>List of Menu</h1>
 
 <div id="menus">
+  <table style="width: 70%; text-align: center;">
+    <thead>
+      <th>No</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @menus.each_with_index do |menu, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= menu.name %></td>
+          <td><%= menu.price %></td>
+          <td><p><%= menu.description %></p></td>
+          <td><%= link_to "Show this menu", menu %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<!-- <div id="menus">
   <% @menus.each do |menu| %>
     <%= render menu %>
         
@@ -10,6 +33,6 @@
       <%= link_to "Show this menu", menu %>
     </p>
   <% end %>
-</div>
+</div> -->
 
 <%= link_to "New menu", new_menu_path %>
