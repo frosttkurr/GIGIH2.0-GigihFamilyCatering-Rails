@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
   
     if !@menus.nil? && !@quantity.empty? && !@email.empty?
       @order = Order.new(
-        user_id: 1,
+        user_id: @current_user.id,
         customer_email: @email,
         total: calculate_total_order(@menus, @quantity),
         status: "NEW"
