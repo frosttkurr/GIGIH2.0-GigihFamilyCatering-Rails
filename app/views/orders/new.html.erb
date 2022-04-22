@@ -11,9 +11,9 @@
       <tbody>
         <% @menus.each do |menu| %>
           <tr>
-            <td><input type="checkbox" name="menu_id[]"></td>
+            <td><input type="checkbox" name="menu_id[]" value="<%= menu.id %>"></td>
             <td><label><%= menu.name %></label></td>
-            <td><input type="number" name="menu_qty[]" placeholder="Quantity"></td>
+            <td><input type="number" name="quantity[]" placeholder="Quantity"></td>
           </tr>
         <% end %>
       </tbody>

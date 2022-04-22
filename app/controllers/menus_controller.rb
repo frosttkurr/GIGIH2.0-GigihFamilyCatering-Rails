@@ -33,7 +33,6 @@ class MenusController < ApplicationController
       end
       redirect_to menu_url(@menu)
     else
-      @categories.nil?
       redirect_to("/menus/new", status: 302)
     end
   end
