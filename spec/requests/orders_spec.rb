@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Orders", type: :request do
   describe "GET /index" do
     it "returns http success" do
-      Order.create(user_id: 1, customer_email: "syakurr@generasigigih.com", total: 30000.0, status: "NEW")
+      Order.create(customer_email: "syakurr@generasigigih.com", total: 30000.0, status: "NEW")
       get orders_url
       expect(response).to have_http_status(:success)
     end
@@ -11,7 +11,7 @@ RSpec.describe "Orders", type: :request do
 
   describe "GET /show" do
     it "returns http success" do
-      order = Order.create(user_id: 1, customer_email: "syakurr@generasigigih.com", total: 30000.0, status: "NEW")
+      order = Order.create(customer_email: "syakurr@generasigigih.com", total: 30000.0, status: "NEW")
       get order_url(order)
       expect(response).to have_http_status(:success)
     end
@@ -26,7 +26,7 @@ RSpec.describe "Orders", type: :request do
 
   describe "GET /edit" do
     it "returns http success" do
-      order = Order.create(user_id: 1, customer_email: "syakurr@generasigigih.com", total: 30000.0, status: "NEW")
+      order = Order.create(customer_email: "syakurr@generasigigih.com", total: 30000.0, status: "NEW")
       get edit_order_url(order)
       expect(response).to have_http_status(:success)
     end
