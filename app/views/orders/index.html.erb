@@ -3,13 +3,29 @@
 <h1>List of Order</h1>
 
 <div id="orders">
-  <% @orders.each do |order| %>
-    <%= render order %>
-        
-    <p>
-      <%= link_to "Show this order", order %>
-    </p>
-  <% end %>
+  <table style="width: 40%; text-align: center;">
+    <thead>
+      <th>No</th>
+      <th>Order Date</th>
+      <th>Customer Email</th>
+      <th>Total</th>
+      <th>Status</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @orders.each_with_index do |order, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= order.created_at %></td>
+          <td><%= order.customer_email %></td>
+          <td><%= order.total %></td>
+          <td><%= order.status %></td>
+          <td><%= link_to "Show this order", order %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
+<br>
 <%= link_to "New order", new_order_path %>
