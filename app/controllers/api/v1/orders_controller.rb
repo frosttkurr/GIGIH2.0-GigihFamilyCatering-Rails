@@ -47,7 +47,7 @@ class Api::V1::OrdersController < ApplicationController
 
   def update
     if @order.update(order_params)
-      render json: @order, status: 200
+      render json: @order, status: 201
     end
   end
   
@@ -71,6 +71,7 @@ class Api::V1::OrdersController < ApplicationController
     # Use to calculate total price of order
     def calculate_total_order(menus, quantities)
       total_order = 0
+      
       menus.each_with_index do |menu, index|
         menu_price = Menu.find_by(id: menu).price
         subtotal = menu_price * quantities[index].to_f
