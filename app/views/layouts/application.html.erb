@@ -13,22 +13,29 @@
     <div class="header-title">
       <%= link_to("Gigih Family Catering", "/") %>
     </div>
-    <ul class="header-menu">
-      <% if @current_user %>
-        <li>
-          User:
-          <%= @current_user.name %>
-        </li>
-        <li>
-            <%= button_to("Log out", "/logout") %>
-        </li>
-      <% else %>
-        <li>
-          <%= link_to("Log in", "/login") %>
-        </li>
-      <% end %>
-    </ul>
-    </header>
+    <% if @current_user %>
+      <div style="float:right;margin-right:15px;">
+          <%= button_to("Log out", "/logout") %>
+      </div>
+      <div style="float:right;margin-right:15px;">
+        <%= link_to("Category", "/categories") %>
+      </div>
+      <div style="float:right;margin-right:15px;">
+        <%= link_to("Menu", "/menus") %>
+      </div>
+      <div style="float:right;margin-right:15px;">
+        <%= link_to("Order here", "/orders") %>
+      </div>
+      <div style="float:right;margin-right:15px;">
+        User:
+        <%= @current_user.name %>
+      </div>
+    <% else %>
+      <div style="float:right;">
+        <%= link_to("Log in", "/login") %>
+      </div>
+    <% end %>
+  </header>
 
   <body>
     <%= yield %>
