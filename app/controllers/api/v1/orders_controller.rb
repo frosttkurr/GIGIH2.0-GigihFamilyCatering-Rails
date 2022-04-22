@@ -8,6 +8,7 @@ class Api::V1::OrdersController < ApplicationController
   end
 
   def show
+    @menus = @order.menus
     render json: @order, status: 201
   end
 
