@@ -38,12 +38,10 @@ class OrdersController < ApplicationController
   end
 
   def update    
-    # if @menu.update(menu_params)
-    #   flash[:notice] = "Menu was successfully updated."
-    #   redirect_to menu_url(@menu)
-    # else
-    #   edit_menu_path(@menu, status: 302)
-    # end
+    if @order.update(order_params)
+      flash[:notice] = "Order was successfully updated."
+      redirect_to order_url(@order)
+    end
   end
 
   def destroy
@@ -60,6 +58,6 @@ class OrdersController < ApplicationController
   
     # Only allow a list of trusted parameters through.
     def order_params
-      params.permit(:customer_email, :status, :description)
+      params.permit(:customer_email, :status)
     end
 end
