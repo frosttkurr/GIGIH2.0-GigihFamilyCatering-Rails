@@ -1,0 +1,30 @@
+<h1>New Order</h1>
+
+<%= form_tag("/orders", {method: :post}) do %>
+  <div>
+    <label for="customer_email">Customer Email:</label>
+    <input type="text" name="customer_email" placeholder="Customer Email">
+  </div>
+  <div>
+    <p>Menu:</p>
+    <table>
+      <tbody>
+        <% @menus.each do |menu| %>
+          <tr>
+            <td><input type="checkbox" name="menu_id[]"></td>
+            <td><label><%= menu.name %></label></td>
+            <td><input type="number" name="menu_qty[]" placeholder="Quantity"></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <input type="submit" value="Create a Order">
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to orders", orders_path %>
+</div>
+

@@ -1,0 +1,30 @@
+<h1>Editing Menu</h1>
+
+<%= form_tag(@order, {method: :patch}) do %>
+  <table>
+    <tr>
+      <td><label for="customer_email">Customer Email</label></td>
+      <td>:</td>
+      <td><input type="text" name="customer_email" placeholder="Customer Email" value="<%= @order.customer_email %>"></td>
+    </tr>
+    <tr>
+      <td><label>Status</label></td>
+      <td>:</td>
+      <td>
+        <select name="status">
+          <option value="new">NEW</option>
+          <option value="paid">PAID</option>
+          <option value="canceled">CANCELED</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <input type="submit" value="Edit Order">
+<% end %>
+
+<br>
+  
+<div>
+  <%= link_to "Show this order", @order %> |
+  <%= link_to "Back to orders", orders_path %>
+</div>
