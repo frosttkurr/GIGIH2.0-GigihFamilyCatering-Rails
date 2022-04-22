@@ -1,25 +1,22 @@
-# Rails on Replit
+# Gigih Family Catering - Ruby on Rails
+## Oleh: KM_G2BE4132_Muhammad Syakurrahman
+Final project assignment pembuatan aplikasi Gigih Family Catering telah saya kerjakan dalam bentuk API dan View, sehingga dapat langsung dijalankan ketika mengklik "RUN" pada Replit, serta menguji coba API menggunakan Postman.
 
-This is a template to get you started with Rails on Replit. It's ready to go so you can just hit run and start coding!
+Gambar di atas merupakan PDM dari aplikasi yang saya kerjakan, yaitu terdiri dari 5 entitas utama dan 1 entitas User yang tidak jadi dipakai sebab terdapat error implementasi login pada RSpec.
 
-This template was generated using `rails new` (after you install the `rails` gem from the packager sidebar) so you can always do that if you prefer to set it up from scratch. The only had two make config changes we had to make to run it on Replit:
+## URL API
 
-- bind the app on `0.0.0.0` instead of `localhost` (see `.replit`)
-- allow `*.repl.co` hosts (see `config/environments/development.rb`)
-- allow the app to be iframed on `replit.com` (see `config/application.rb`)
+Untuk menguji coba API aplikasi dapat mengikuti beberapa URL di bawah ini beserta parameter dan method-nya.
 
-## Running the app
+### /GET index
+### /GET show
+### /POST create
+### /PATCH update
+### /DELETE destroy 
 
-Simple hit run! You can edit the run command from the `.replit` file.
+## Menjalankan Aplikasi
 
-## Running commands
+Untuk menjalankan aplikasi hanya perlu mengklik "RUN" pada bagian di atas, kemudian aplikasi akan terbuka dan kita bisa mencoba fitur CRUD pada Menu, Order, dan Category.
 
-Start every command with `bundle exec` so that it runs in the context of the installed gems environment. The console pane will give you output from the server but you can run arbitrary command from the shell without stopping the server.
 
-## Database
-
-SQLite would work in development but we don't recommend running it in production. Instead look into using the built-in [Replit database](http://docs.replit.com/misc/database). Otherwise you are welcome to connect databases from your favorite provider. 
-
-## Help
-
-If you need help you might be able to find an answer on our [docs](https://docs.replit.com) page. Alternatively you can [ask in the community](https://replit.com/talk/ask). Feel free to report bugs [here](https://replit.com/bugs) and give us feedback [here](https://Replit/feedback).
+### (Capture Aplikasi)

@@ -40,6 +40,8 @@ RSpec.describe "Menus", type: :request do
     #     }.to change(Menu, :count).by(1)
     #   end
 
+    # errors in RSpec but OK in implementation
+      
     #   it "redirects to the created menu" do
     #     post menus_url, params: { menu: {name: "Nasi Jinggo", price: 5000.0, description: "Test deskripsi"}, categories: {category_id: [1,2]} }
     #     expect(response).to redirect_to(menu_url(Menu.last))

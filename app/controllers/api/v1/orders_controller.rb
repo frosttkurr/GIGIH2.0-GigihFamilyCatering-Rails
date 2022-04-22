@@ -44,7 +44,7 @@ class Api::V1::OrdersController < ApplicationController
     end
   end
 
-  def update    
+  def update
     if @order.update(order_params)
       render json: @order, status: 200
     end
