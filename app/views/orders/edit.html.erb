@@ -12,9 +12,24 @@
       <td>:</td>
       <td>
         <select name="status">
-          <option value="NEW">NEW</option>
-          <option value="PAID">PAID</option>
-          <option value="CANCELED">CANCELED</option>
+          <option value="NEW" 
+            <% if @order.status.eql? "NEW" %>
+              selected
+            <% end %>>
+              NEW
+            </option>
+          <option value="PAID"
+            <% if @order.status.eql? "PAID" %>
+              selected
+            <% end %>>
+              PAID
+            </option>
+          <option value="CANCELED"
+            <% if @order.status.eql? "CANCELED" %>
+              selected
+            <% end %>>
+              CANCELED
+            </option>
         </select>
       </td>
     </tr>
