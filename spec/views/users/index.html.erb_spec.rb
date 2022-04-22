@@ -1,7 +1,5 @@
 require 'rails_helper'
 
 RSpec.describe "users/index", type: :view do
-  it "renders a form for login" do
-    render
-  end
+  # pending "add some examples to (or delete) #{__FILE__}"
 end

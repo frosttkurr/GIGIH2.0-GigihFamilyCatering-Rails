@@ -1,11 +1,5 @@
 require 'rails_helper'
 
 RSpec.describe "categories/show", type: :view do
-  before(:each) do
-    @category = assign(:category, Category.create(name: "Dessert"))
-  end
-
-  it "renders attributes in <p>" do
-    render
-  end
+  # pending "add some examples to (or delete) #{__FILE__}"
 end

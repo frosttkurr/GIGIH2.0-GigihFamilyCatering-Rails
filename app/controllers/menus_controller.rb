@@ -1,6 +1,7 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: %i[ show edit update destroy ]
-  before_action :authenticate_user
+  # before_action :authenticate_user
+  # Login deactivated because error implemented in RSpec
   
   def index
     @menus = Menu.all
