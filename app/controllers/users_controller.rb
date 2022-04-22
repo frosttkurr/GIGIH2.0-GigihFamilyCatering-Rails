@@ -13,12 +13,14 @@ class UsersController < ApplicationController
     else
       @username = params[:username]
       @password = params[:password]
+      flash[:notice] = "Failed to logged in"
       render("users/index")
     end
   end
 
   def logout
     session[:user_id] = nil
+    flash[:notice] = "You have logged out successfully"
     redirect_to("/login")
   end
 end
