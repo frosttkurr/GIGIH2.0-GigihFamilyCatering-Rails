@@ -42,9 +42,7 @@ RSpec.describe 'Menus', type: :request do
           category_id: [1,2]
         }
       end
-      
-      # errors in RSpec but OK in implementation
-      
+            
       it 'returns a created status' do
         expect(response).to have_http_status(:created)
       end

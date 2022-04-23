@@ -1,27 +1,44 @@
-# Gigih Family Catering - Ruby on Rails
-## Oleh: KM_G2BE4132_Muhammad Syakurrahman
-Final project assignment pembuatan aplikasi Gigih Family Catering telah saya kerjakan dalam bentuk API dan View, sehingga dapat langsung dijalankan ketika mengklik "RUN" pada Replit, serta menguji coba API menggunakan Postman.
+## Gigih Family Catering - Ruby on Rails
+### Oleh: KM_G2BE4132_Muhammad Syakurrahman
+Final project assignment ini telah saya kerjakan dalam bentuk API dan View.
+1. Testing program dapat langsung melakukan RUN agar dapat mengakses view aplikasi website.
+2. Testing API dapat dicoba menggunakan Postman, dimana API documentation telah saya sediakan di bawah ini untuk mempermudah dalam mencobanya.
 
-Gambar di atas merupakan PDM dari aplikasi yang saya kerjakan, yaitu terdiri dari 5 entitas utama dan 1 entitas User yang tidak jadi dipakai sebab terdapat error implementasi login pada RSpec.
-
-## URL API
-
-Untuk menguji coba API aplikasi dapat mengikuti beberapa URL di bawah ini beserta parameter dan method-nya.
-
+## API Documentations
 ### GET
-#### GET All Data
-Contoh pemanggilan seluruh data:
-> gigih-family-catering-syakurrhmn.gojek22.repl.co/api/v1/orders
-> 
-> 
-### /GET show
-### /POST create
-### /PATCH update
-### /DELETE destroy 
+#### List of Orders
+> ### URL:
+> /api/v1/orders
+#### Show Order by Id
+> ### URL:
+> /api/v1/orders/:id
+### POST
+#### Add new Order
+> ### URL:
+> /api/v1/orders
+> ### Parameter with Example:
+> #### customer_email : chikothecat@gmail.com
+> #### menu_id[] : 1
+> #### quantity[] : 2
+> #### menu_id[] : 14
+> #### quantity[] : 1
+> ### NOTE:
+> Parameter dengan [] artinya Anda dapat memasukan banyak values secara berulang, dan tolong isi quantity secara berurutan untuk setiap menu_id.
+### PATCH / PUT
+#### Update an order
+> ### URL:
+> api/v1/orders/:id
+> ### Parameter with Example:
+> #### customer_email : patrickthestar@gmail.com
+> #### status : PAID
+> ### NOTE:
+> Hanya customer_email dan status yang dapat dirubah pada order
+### DELETE
+#### Delete an order
+> ### Method:
+> DELETE
+> ### URL:
+> api/v1/orders/:id
 
-## Menjalankan Aplikasi
-
-Untuk menjalankan aplikasi hanya perlu mengklik "RUN" pada bagian di atas, kemudian aplikasi akan terbuka dan kita bisa mencoba fitur CRUD pada Menu, Order, dan Category.
-
-
-### (Capture Aplikasi)
+## PDM
+Gambar di atas merupakan PDM dari aplikasi yang saya kerjakan, yaitu terdiri dari 5 entitas utama.
