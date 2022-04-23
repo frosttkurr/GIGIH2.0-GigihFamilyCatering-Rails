@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get "/" => "orders#index"
   get "/reports" => "reports#index"
   post "/reports/email" => "reports#show_by_email"
-   post "/reports/total-price" => "reports#show_by_range_total_price"
+  post "/reports/total-price" => "reports#show_by_range_total_price"
+  post "/reports/range-date" => "reports#show_by_range_date"
   
   resources :orders
   resources :menus
