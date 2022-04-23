@@ -4,6 +4,10 @@ Rails.application.routes.draw do
       resources :orders
       resources :menus
       resources :categories
+      get "/reports" => "reports#index"
+      post "/reports/email" => "reports#show_by_email"
+      post "/reports/total-price" => "reports#show_by_range_total_price"
+      post "/reports/range-date" => "reports#show_by_range_date"
     end
   end 
 
