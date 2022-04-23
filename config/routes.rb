@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end 
 
   get "/" => "orders#index"
+  get "/reports" => "reports#index"
   
   resources :orders
   resources :menus
