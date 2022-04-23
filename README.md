@@ -45,7 +45,7 @@ NOTE:
 > ### Method:
 > PUT
 > ### URL:
-> api/v1/categories/:id
+> /api/v1/categories/:id
 > #### name : Dessert
 
 ### DELETE
@@ -53,7 +53,7 @@ NOTE:
 > ### Method:
 > DELETE
 > ### URL:
-> api/v1/categories/:id
+> /api/v1/categories/:id
 
 ### 2. Menu Feature
 ### GET
@@ -89,7 +89,7 @@ NOTE:
 > ### Method:
 > PUT
 > ### URL:
-> api/v1/menus/:id
+> /api/v1/menus/:id
 > #### name : Opor Ayam
 > #### price : 18000
 > #### description : Opor ayam is an Indonesian dish from Central Java consisting of chicken cooked in coconut milk.
@@ -99,7 +99,7 @@ NOTE:
 > ### Method:
 > DELETE
 > ### URL:
-> api/v1/menus/:id
+> /api/v1/menus/:id
 
 ### 3. Order Feature 
 ### GET
@@ -135,7 +135,7 @@ NOTE:
 > ### Method:
 > PATCH
 > ### URL:
-> api/v1/orders/:id
+> /api/v1/orders/:id
 > ### Parameter with Example:
 > #### customer_email : patrickthestar@gmail.com
 > #### status : PAID
@@ -147,7 +147,7 @@ NOTE:
 > ### Method:
 > DELETE
 > ### URL:
-> api/v1/orders/:id
+> /api/v1/orders/:id
 
 ## PDM
 
