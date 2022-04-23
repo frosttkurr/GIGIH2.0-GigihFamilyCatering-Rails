@@ -44,6 +44,7 @@ class OrdersController < ApplicationController
             sub_total: @menu_price * @quantity[index].to_f
           ).save
         end
+        
         flash[:notice] = "Order was successfully created."
         redirect_to order_url(@order)
       end

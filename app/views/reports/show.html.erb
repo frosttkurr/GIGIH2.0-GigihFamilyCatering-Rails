@@ -1,0 +1,30 @@
+<h1>Order Reports : <%= @indicators %></h1>
+
+<br>
+<div id="orders">
+  <table style="width: 50%; text-align: left;">
+    <thead>
+      <th>No</th>
+      <th>Order Date</th>
+      <th>Customer Email</th>
+      <th>Total</th>
+      <th>Status</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @orders.each_with_index do |order, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= order.created_at %></td>
+          <td><%= order.customer_email %></td>
+          <td><%= order.total %></td>
+          <td><%= order.status %></td>
+          <td><%= link_to "Show this order", order %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+        
+<br>
+<%= link_to "Back to reports", "/reports" %>

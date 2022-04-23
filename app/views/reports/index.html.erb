@@ -1,4 +1,4 @@
-<h1>List of Daily Reports: <%= @date %></h1>
+<h1>Daily Reports of Order: <%= @date %></h1>
 
 <div id="orders">
   <table style="width: 50%; text-align: left;">
@@ -24,3 +24,23 @@
     </tbody>
   </table>
 </div>
+
+<table>
+  <tbody>
+    <tr>
+      <form action="/reports/email" method="POST">
+        <td><label>Search by Email</label></td>
+        <td><input type="search" name="email" required></td>
+        <td><button>Search</button></td>
+      </form>
+    </tr>
+    <tr>
+      <form action="/reports/total-price" method="POST">
+        <td><label>Search by Total Price:</label></td>
+        <td><input type="number" name="range_total_price_from" required></td>
+        <td><input type="number" name="range_total_price_until" required></td>
+        <td><button type="Submit">Search</button></td>
+      </form>
+    </tr>
+  </tbody>
+</table>
