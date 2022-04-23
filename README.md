@@ -8,7 +8,12 @@ Gambar di atas merupakan PDM dari aplikasi yang saya kerjakan, yaitu terdiri dar
 
 Untuk menguji coba API aplikasi dapat mengikuti beberapa URL di bawah ini beserta parameter dan method-nya.
 
-### /GET index
+### GET
+#### GET All Data
+Contoh pemanggilan seluruh data:
+> gigih-family-catering-syakurrhmn.gojek22.repl.co/api/v1/orders
+> 
+> 
 ### /GET show
 ### /POST create
 ### /PATCH update
