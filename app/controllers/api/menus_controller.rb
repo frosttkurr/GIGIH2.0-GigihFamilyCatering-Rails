@@ -1,23 +1,15 @@
-class MenusController < ApplicationController
+class Api::V1::MenusController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_menu, only: %i[ show edit update destroy ]
-  # before_action :authenticate_user
-  # Login deactivated because error implemented in RSpec
-  
+
   def index
     @menus = Menu.all
+    render json: @menus
   end
 
   def show
     @categories = @menu.categories
-  end
-
-  def new
-    @menu = Menu.new
-    @categories = Category.all
-  end
-
-  def edit
-    @categories = Category.all
+    render json: @menu, status: 201
   end
 
   def create
@@ -33,27 +25,25 @@ class MenusController < ApplicationController
         )
         @category_details.save
       end
-      flash[:notice] = "Menu was successfully created."
-      redirect_to menu_url(@menu)
+
+      render json: @menu, status: 201
     else
-      redirect_to("/menus/new", status: 302)
+      render json: @menu.errors, status: 422
     end
   end
 
   def update    
     if @menu.update(menu_params)
-      flash[:notice] = "Menu was successfully updated."
-      redirect_to menu_url(@menu)
+      render json: @menu, status: 201
     else
-      edit_menu_path(@menu, status: 302)
+      render json: @menu.errors, status: 422
     end
   end
 
   def destroy
     CategoryDetail.destroy_by(menu_id: @menu.id)
     @menu.destroy
-    flash[:notice] = "Menu was successfully destroyed."
-    redirect_to menus_url
+    render :json => {:success => true}
   end
 
   private
@@ -66,4 +56,5 @@ class MenusController < ApplicationController
     def menu_params
       params.permit(:name, :price, :description)
     end
+
 end
