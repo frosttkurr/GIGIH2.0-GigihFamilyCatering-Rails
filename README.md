@@ -4,6 +4,12 @@ Final project assignment ini telah saya kerjakan dalam bentuk API dan View.
 1. Testing program dapat langsung melakukan RUN agar dapat mengakses view aplikasi.
 2. Testing API dapat dicoba menggunakan Postman, dimana API Documentation telah disediakan di bawah ini untuk mempermudah dalam testing.
 
+NOTE:
+##### Code untuk install semua gemfile
+> bundle install
+##### Code untuk menggunakan RSpec
+> bundle exec rspec -fd
+
 ## Use Case
 1. Pengguna dapat menambah, mengubah, dan menghapus kategori pada halaman Category. Kategori ditambahkan agar dapat dipilih pada saat menambahkan menu baru.
 2. Pengguna dapat menambah, mengubah, dan menghapus menu pada halaman Menu. Menu makanan ditambahkan agar dapat dipilih pada saat pengguna mencatatatkan Order.
@@ -144,4 +150,5 @@ Final project assignment ini telah saya kerjakan dalam bentuk API dan View.
 > api/v1/orders/:id
 
 ## PDM
+
 Gambar di atas merupakan PDM dari aplikasi yang saya kerjakan, yaitu terdiri dari 5 entitas utama.
