@@ -13,7 +13,8 @@ NOTE:
 ## Use Case
 1. Pengguna dapat menambah, mengubah, dan menghapus kategori pada halaman Category. Kategori ditambahkan agar dapat dipilih pada saat menambahkan menu baru.
 2. Pengguna dapat menambah, mengubah, dan menghapus menu pada halaman Menu. Menu makanan ditambahkan agar dapat dipilih pada saat pengguna mencatatatkan Order.
-3. Pengguna dapat menambahkan order pada halaman Order. Pengguna hanya dapat merubah merubah email pelanggan dan status (NEW, PAID, CANCELED) pada order. Setiap jam 5 sore untuk order yang belum dibayarkan akan secara otomatis berubah status menjadi "CANCELED".
+3. Pengguna dapat menambahkan order pada halaman Order. Pengguna hanya dapat merubah merubah email pelanggan dan status (NEW, PAID, CANCELED) pada order. Setiap jam 5 sore untuk order yang belum dibayarkan akan pengguna rubah statusnya menjadi "CANCELED".
+4. Pengguna dapat melihat reports order berdasarkan indikator hari ini, email yang diinputkan, range total harga, dan range tanggal order.
 
 ## API Documentations
 
@@ -148,6 +149,41 @@ NOTE:
 > DELETE
 > ### URL:
 > /api/v1/orders/:id
+
+### 4. Reports Feature 
+### GET
+#### List of orders reports for today
+> ### Method:
+> GET
+> ### URL:
+> /api/v1/reports
+
+### POST
+#### List of orders reports based on email
+> ### Method:
+> POST
+> ### URL:
+> /api/v1/reports/email
+> ### Parameter with Example:
+> #### email : chikothecat@gmail.com
+
+#### List of orders reports based on total price range
+> ### Method:
+> POST
+> ### URL:
+> /api/v1/reports/total-price
+> ### Parameter with Example:
+> #### range_total_price_from : 50000
+> #### range_total_price_until : 100000
+
+#### List of orders reports based on date range
+> ### Method:
+> POST
+> ### URL:
+> /api/v1/reports/range-date
+> ### Parameter with Example:
+> #### range_date_from : 2022-04-21
+> #### range_date_until : 2022-04-23
 
 ## PDM
 
